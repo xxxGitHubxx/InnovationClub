@@ -1,13 +1,13 @@
 {
-    "hosting": {
-        "site": "innovation-club-126o",
-        "public": "build",
-        "ignore": [
-            "firebase.json",
-            "**/.*",
-            "**/node_modules/**"
-        ]
-    },
+  "hosting": {
+    "site": "innovation-club-126o",
+    "public": "build",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  },
   "firestore": {
     "rules": "firestore.rules",
     "indexes": "firestore.indexes.json"

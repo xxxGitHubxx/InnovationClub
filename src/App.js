@@ -1,11 +1,12 @@
-import logo from './logo.svg';
+
 import './App.css';
+import { Auth } from './components/Auth';
 
 function App() {
   return (
-    <div className="App">
-      Innovation Club
-    </div>
+      <div className="App">
+          <Auth/>
+     </div>
   );
 }
 
