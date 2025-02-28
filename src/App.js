@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import './App.css';
-import { Auth } from './components/Auth';
+import { Auth } from './components/auth';
 
 function App() {
     return (
