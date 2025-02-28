@@ -13,15 +13,25 @@ import { Login } from './components/pages/Login';
 
 function App() {
     return (
+        <>
+            <style>
+             {`  
+             .spacer {
+                 height: 3rem;
+                    }
+                    
+                `}
+            </style>
         <div className="App">
-            <Navbar/>
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/login" element={<Login />} />
             </Routes>
-          <Auth/>
-     </div>
+                <Auth />
+                <Navbar />
+        </div>
+        </>
   );
 }
 

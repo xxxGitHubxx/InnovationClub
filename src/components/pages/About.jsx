@@ -2,7 +2,19 @@ import React from 'react'
 
 export const About = () => {
     return (
-        <div>About</div>
+        <>
+            <style>
+                {`  
+                    .About {
+                        height: 100vh;
+
+                    }
+                `}
+            </style>
+            <div className="About">
+                About
+            </div>
+        </>
     )
 }
 
