@@ -21,7 +21,8 @@ export const Navbar = () => {
                     display: flex;
                     justify-content: space-between;
                     align-items: center; 
-                    background-color: rgba(28, 28, 28, 0.8);
+                    background-color: rgba(28, 28, 28, 0.9);
+                    backdrop-filter: blur(5px);
                     border-radius: 0rem 0rem 0.6rem 0.6rem;
                     width: 100%;
                     position: fixed;

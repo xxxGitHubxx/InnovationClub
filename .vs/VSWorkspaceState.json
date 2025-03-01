@@ -3,11 +3,12 @@
     "",
     "\\public",
     "\\src",
+    "\\src\\assets",
     "\\src\\components",
+    "\\src\\components\\pages",
     "\\src\\config",
-    "\\src\\pages",
     "\\src\\utils"
   ],
-  "SelectedNode": "\\src\\components\\navbar.js",
+  "SelectedNode": "\\src\\App.js",
   "PreviewInSolutionExplorer": false
 }
