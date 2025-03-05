@@ -3,8 +3,7 @@ import { useEffect, useRef } from "react";
 import banner from "../../assets/banner.jpg";
 import favicon from "../../assets/Innovation Club favicon.png";
 import { Colors } from "../../assets/Colors";
-
-
+import SpotlightCard from './SpotlightCard';
 
 const BannerContainer = () => {
     const bannerContainerRef = useRef(null);
@@ -62,7 +61,6 @@ export const Home = () => {
                     @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
                     .Home {
-                        height: 100vh;
                         zIndex: -1;
                     }
                     .Home .banner {
@@ -79,14 +77,15 @@ export const Home = () => {
                     .content {
                         background: rgb(28,28,28);
                         background: linear-gradient(180deg, #1c1c1c 0%,rgb(5, 5, 88) 20%,rgb(65, 3, 88) 40%, #1c1c1c 60%, rgb(65, 3, 88) 80%, rgb(5, 5, 88) 100%);
-                        height: 800vh;
+                        height:  800vh;
                         z-index: -10;
                         display: flex;
-                        justify-content: flex-start;
+                        justify-content: center;
                         align-items: flex-start;
-                        padding: 10rem 5vw;
-                        flex-direction: row;
+                        padding: clamp(3rem, 10rem, 10rem) 5vw;
                         gap: 2rem;
+                        flex-wrap: wrap;
+                        align-content: flex-start
                     }
 
                     .bannerContainer {
@@ -195,29 +194,18 @@ export const Home = () => {
                       animation: rotate 4.5s infinite;
                       animation-delay: 3s; /* Starts after second finishes */
                     }
-                    .tile {
-                        background: rgba(255, 255, 255, 0.2);
-                        backdrop-filter: blur(8px);
-                        border-radius: 30px;
-                        padding: 0% 5%;
-                        color: ${Colors.white};
-                        text-align: center;
-                        z-index: 0;
-                        box-shadow: 16px 16px 16px rgba(36,2,93,0.1);
-                        overflow: hidden;
-                        justify-content: center;
-                        align-items: center;
-                        text-align: center;
-                    }
 
                     .sectionTitle
                     {
                     position: relative;
                     display: flex;
                     flex: 1;
+                    width: 50%;
                     justify-content: center;
                     align-items: center;
                     flex-wrap: wrap;
+                    height: 50vh;
+                    margin-top: 6vh;
                     }
 
                     .sectionTitle .box
@@ -228,7 +216,6 @@ export const Home = () => {
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    margin: 6vh 0px;
                     transition: 0.5s;
                     }
                     .sectionTitle .box::before,
@@ -238,13 +225,13 @@ export const Home = () => {
                     position: absolute;
                     top: 0;
                     left: 0;
-                    width: 50%;
+                    width: 60%;
                     height: 100%;
                     background: #fff;
                     border-radius: 8px;
                     transform: skewX(15deg);
                     transition: 0.5s;
-                    background: linear-gradient(315deg, #03a9f4, #ff0058);
+                    background: linear-gradient(315deg,${Colors.purple},${Colors.lilac});
                     z-index: 0;
                     }
 
@@ -253,18 +240,60 @@ export const Home = () => {
                     filter: blur(30px);
                     }
 
+                    .sectionTitle:hover .box::before,
+                    .sectionTitle:hover .box::after
+                    {
+                    transform: skewX(0deg);
+                    width: 70%;
+                    left: 5%;
+                    right: 0%;
+                    }
+
                     .sectionTitle .box .text
                     {
                     position: absolute;
                     left: 0;
-                    padding: 10rem 5rem;
+                    padding: 6rem 2rem;
+                    width: 60%;
                     background: rgba(255, 255, 255, 0.05);
                     backdrop-filter: blur(10px);
                     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
                     border-radius: 8px;
                     transform: 0.5s;
-                    color: #fff;
+                    color: ${Colors.white};
                     z-index: 1;
+                    font-family: "Roboto", sans-serif;
+                    font-style: extra-bold;
+                    font-weight: 900;
+                    font-size: clamp(2.5rem, 7vw, 4.2rem);
+                    display: flex;
+                    justify-content: center;
+                    }
+
+                    @media (orientation:portrait)
+                    {
+                        .sectionTitle
+                        {
+                            flex-basis: 100%;
+                            width: 100%;
+                            margin-top: -10rem;;
+                        }
+                        
+                        .sectionTitle .box::before,
+                        .sectionTitle .box::after
+                        {
+                        transform: skewX(0deg);
+                        left: -125%;
+                        top: 35%;
+                        width: 350%;
+                        height: 30%;
+                        }
+
+                        .sectionTitle .box .text
+                        {
+                        position: relative;
+                        padding: 3rem 6rem;
+                        }
                     }
 
 
@@ -283,8 +312,14 @@ export const Home = () => {
                         </div>
                     </div>
                 </div>
-                    <div className="tile" style={{flex: "1", height:"70vh", position: " relative"} }>
-                    </div>
+                <SpotlightCard className="spotlight">
+                 
+                        The Innovation Club, founded in 2024, aims to foster creativity and problem-solving by encouraging members 
+                        to think outside the box and develop cutting-edge solutions. It provides a collaborative space for individuals 
+                        to explore new ideas, experiment with emerging technologies, and drive positive change through innovation. 
+                        The club nurtures a spirit of curiosity and continuous learning, empowering members to turn their visions into reality.
+                 
+                </SpotlightCard>
                 </div>
             </div>
         </>
