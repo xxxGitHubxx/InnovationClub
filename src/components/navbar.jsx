@@ -28,7 +28,7 @@ export const Navbar = () => {
                     width: 100%;
                     position: fixed;
                     top: 0;
-                    zIndex: 1000;
+                    z-index: 10;
                     backdropFilter: "blur(10px)";
                     }
 

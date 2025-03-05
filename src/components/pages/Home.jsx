@@ -63,25 +63,30 @@ export const Home = () => {
 
                     .Home {
                         height: 100vh;
-                        zIndex: 0;
+                        zIndex: -1;
                     }
                     .Home .banner {
                         background: ${Colors.black} url(${banner}) no-repeat fixed center; 
                         background-size: cover;
                         height: 105vh;
-                        zIndex: 0;
+                        zIndex: 1;
                         display: flex;
                         flex-direction: column;
                         justify-content: center;
-                        alignItems: center;
+                        align-items: center;
                         position: relative;
                     }
-                    .Home .content {
+                    .content {
                         background: rgb(28,28,28);
                         background: linear-gradient(180deg, #1c1c1c 0%,rgb(5, 5, 88) 20%,rgb(65, 3, 88) 40%, #1c1c1c 60%, rgb(65, 3, 88) 80%, rgb(5, 5, 88) 100%);
                         height: 800vh;
-                        zIndex: 0;
+                        z-index: -10;
                         display: flex;
+                        justify-content: flex-start;
+                        align-items: flex-start;
+                        padding: 10rem 5vw;
+                        flex-direction: row;
+                        gap: 2rem;
                     }
 
                     .bannerContainer {
@@ -205,6 +210,63 @@ export const Home = () => {
                         text-align: center;
                     }
 
+                    .sectionTitle
+                    {
+                    position: relative;
+                    display: flex;
+                    flex: 1;
+                    justify-content: center;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    }
+
+                    .sectionTitle .box
+                    {
+                    position: relative;
+                    width: 20vw;
+                    height: 60vh;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 6vh 0px;
+                    transition: 0.5s;
+                    }
+                    .sectionTitle .box::before,
+                    .sectionTitle .box::after
+                    {
+                    content:'';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 50%;
+                    height: 100%;
+                    background: #fff;
+                    border-radius: 8px;
+                    transform: skewX(15deg);
+                    transition: 0.5s;
+                    background: linear-gradient(315deg, #03a9f4, #ff0058);
+                    z-index: 0;
+                    }
+
+                    .sectionTitle .box::after
+                    {
+                    filter: blur(30px);
+                    }
+
+                    .sectionTitle .box .text
+                    {
+                    position: absolute;
+                    left: 0;
+                    padding: 10rem 5rem;
+                    background: rgba(255, 255, 255, 0.05);
+                    backdrop-filter: blur(10px);
+                    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                    border-radius: 8px;
+                    transform: 0.5s;
+                    color: #fff;
+                    z-index: 1;
+                    }
+
 
                 `}
             </style>
@@ -214,8 +276,14 @@ export const Home = () => {
                     <img src={favicon} className="jump" onClick={() => window.scrollTo({ top: window.innerHeight + (window.innerHeight * 0.10), behavior: "smooth" })}></img>
                 </div>
                 <div className="content">
-                    OUR AIM
-                    <div className="tile" style={{width: "18vw", height:"70vh", position: "relative", top: "15vh", left: ""} }>
+                <div class="sectionTitle">
+                    <div class="box">
+                        <div class="text">
+                        Our Aim
+                        </div>
+                    </div>
+                </div>
+                    <div className="tile" style={{flex: "1", height:"70vh", position: " relative"} }>
                     </div>
                 </div>
             </div>
