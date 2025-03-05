@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 
 import banner from "../../assets/banner.jpg";
 import favicon from "../../assets/Innovation Club favicon.png";
-import separator from "../../assets/separator.jpg";
+import { Colors } from "../../assets/Colors";
 
 
 
@@ -66,7 +66,7 @@ export const Home = () => {
                         zIndex: 0;
                     }
                     .Home .banner {
-                        background: #1c1c1c url(${banner}) no-repeat fixed center; 
+                        background: ${Colors.black} url(${banner}) no-repeat fixed center; 
                         background-size: cover;
                         height: 105vh;
                         zIndex: 0;
@@ -77,8 +77,9 @@ export const Home = () => {
                         position: relative;
                     }
                     .Home .content {
-                        background: #1c1c1c url() no-repeat fixed center; 
-                        height: 100vh;
+                        background: rgb(28,28,28);
+                        background: linear-gradient(180deg, #1c1c1c 0%,rgb(5, 5, 88) 20%,rgb(65, 3, 88) 40%, #1c1c1c 60%, rgb(65, 3, 88) 80%, rgb(5, 5, 88) 100%);
+                        height: 800vh;
                         zIndex: 0;
                         display: flex;
                     }
@@ -88,9 +89,9 @@ export const Home = () => {
                         backdrop-filter: blur(8px);
                         border-radius: 30px;
                         padding: 0% 5%;
-                        color: #fefefe;
+                        color: ${Colors.white};
                         position: absolute;
-                        top: 50%;
+                        top: 45%;
                         left: 50%;
                         text-align: center;
                         transform: translate(-50%, -50%);
@@ -110,8 +111,8 @@ export const Home = () => {
                         font-family: "Roboto", sans-serif;
                         font-style: extra-bold;
                         font-weight: 900;
-                        font-size: clamp(3rem, 7vw, 4.2rem);
-                        color: #1c1c1c;
+                        font-size: clamp(2.5rem, 7vw, 4.2rem);
+                        color: ${Colors.black};
                         opacity: 0;
                         transition: transform 1s ease-out, opacity 2s ease-out;
                         width: 100%;
@@ -124,30 +125,29 @@ export const Home = () => {
                     .rotatingText {
                         position: absolute;
                         text-align: center;
-                        background-color: #1c1c1c;
+                        background-color: ${Colors.black};
                         width: 45%;
-                        top: 30vh;
-                        height: clamp(2.5rem, 6vw, 4rem);
+                        top: 70%;
+                        height: clamp(2rem, 6vw, 4rem);
                         left: 27.5%; //half of width
                         overflow: hidden;
                         border-radius: 30px;
                     }
 
                     .rotatingText-adjective { 
-                        position: absolute;
                         font-family: 'Courier New', monospace;
                         font-size: clamp(0.5rem, 5vw, 3.2rem);
                         font-style: normal;
                         font-weight: 700;
                         left: 0;
                         margin-bottom: 0;
-                        margin-top: 50px;
+                        margin-top: 0;
                         opacity: 0;
                         position: absolute;
                         right: 0;
                         text-align: center;
                         text-transform: uppercase;
-                        top: -6.8vh;
+                        top: 10%;
 
                     }
 
@@ -155,7 +155,7 @@ export const Home = () => {
                         width: 2.5rem;
                         border-radius: 50%;
                         position: absolute;
-                        top: 90%;
+                        bottom: 10%;
                         left: 50%;
                         background-color: rgba(28, 28, 28, 0.8);
                         transform: rotate(180deg) translate(50%, 50%);
@@ -166,7 +166,7 @@ export const Home = () => {
                     }
                     .jump:hover {
                         border-style: solid;
-                        border-color: #1c1c1c;
+                        border-color: ${Colors.black};
                         width: 3rem;
                     }
 
@@ -190,18 +190,12 @@ export const Home = () => {
                       animation: rotate 4.5s infinite;
                       animation-delay: 3s; /* Starts after second finishes */
                     }
-                    .separator {
-                        background: #1c1c1c url(${separator}) repeat-x left center;
-                        background-size: auto 105%; /* Stretches the image slightly beyond the div height */
-                        width: 100%;
-                        height: 10vh;
-                    }
                     .tile {
                         background: rgba(255, 255, 255, 0.2);
                         backdrop-filter: blur(8px);
                         border-radius: 30px;
                         padding: 0% 5%;
-                        color: #fefefe;
+                        color: ${Colors.white};
                         text-align: center;
                         z-index: 0;
                         box-shadow: 16px 16px 16px rgba(36,2,93,0.1);
@@ -219,13 +213,11 @@ export const Home = () => {
                     <BannerContainer />
                     <img src={favicon} className="jump" onClick={() => window.scrollTo({ top: window.innerHeight + (window.innerHeight * 0.10), behavior: "smooth" })}></img>
                 </div>
-                <div className="separator"></div>
                 <div className="content">
                     OUR AIM
-                    <div className="tile" style={{width: "18vw", height:"70vh", position: "relative", top: "15vh", left: "60vw"} }>
+                    <div className="tile" style={{width: "18vw", height:"70vh", position: "relative", top: "15vh", left: ""} }>
                     </div>
                 </div>
-                <div className="separator"></div>
             </div>
         </>
     );

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link, NavLink } from "react-router-dom"
 import logo from '../assets/Innovation Club icon.png'
+import { Colors } from '../assets/Colors';
 
 export const Navbar = () => { 
     const [menuOpen, setMenuOpen] = useState(false);
@@ -13,7 +14,7 @@ export const Navbar = () => {
                         
                         text-decoration: bold;
                         border-style: solid;
-                        border-color: #8e7cc3;
+                        border-color: ${Colors.lilac};
 
                     }
 
@@ -43,7 +44,7 @@ export const Navbar = () => {
                     nav .menu span {
                         height: 0.3rem;
                         width: 100%;
-                        background-color: #fefefe;
+                        background-color: ${Colors.white};
                         border-radius: 0.2rem;
                     }
                     nav img {
@@ -58,7 +59,7 @@ export const Navbar = () => {
                         font-size: clamp(1rem, 1.4rem, 1.8rem);
                         font-weight: bold;
                         text-decoration: none;
-                        color: #fefefe;
+                        color: ${Colors.white};
                         margin: 0.8rem 0.5rem;
                     }
 
@@ -76,7 +77,7 @@ export const Navbar = () => {
                         border-color:  rgba(28, 28, 28, 0);
                         border-width: 2px;
                         text-decoration: none;
-                        color: #fefefe;
+                        color: ${Colors.white};
                         margin: 0rem 0.5rem;
                         padding: 0.1rem 0.4rem;
                         border-radius: 0.5rem;
@@ -84,7 +85,7 @@ export const Navbar = () => {
 
                     nav ul li a:hover {
                         border-style:solid;
-                        border-color: #24025d;
+                        border-color: ${Colors.blue};
                     }
 
                     @media (orientation:portrait) {
@@ -124,7 +125,7 @@ export const Navbar = () => {
                             border-color: rgba(28, 28, 28, 0);
                         }
                         .active {
-                        color: #fc2271;
+                        color: ${Colors.pink};
                         text-decoration: bold;
                         border-style: none;
                         }
