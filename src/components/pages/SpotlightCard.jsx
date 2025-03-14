@@ -1,13 +1,13 @@
 import { useRef } from "react";
 import { Colors } from "../../assets/Colors";
 
-const SpotlightCard = ({ children, className = "", spotlightColor = "rgba(255, 255, 255, 0.25)" }) => {
+const SpotlightCard = ({ children, className = "", spotlightColor = Colors.white }) => {
     const divRef = useRef(null);
   
     const handleMouseMove = (e) => {
       const rect = divRef.current.getBoundingClientRect();
-      const x = e.clientX - rect.left + 100;
-      const y = e.clientY - rect.top + 150;
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
   
       divRef.current.style.setProperty("--mouse-x", `${x}px`);
       divRef.current.style.setProperty("--mouse-y", `${y}px`);
@@ -20,8 +20,8 @@ const SpotlightCard = ({ children, className = "", spotlightColor = "rgba(255, 2
         {`        
         .card-spotlight
         {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(8px);
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(6px);
             border-radius: 30px;
             padding: 0% 5%;
             color: ${Colors.white};
@@ -32,18 +32,16 @@ const SpotlightCard = ({ children, className = "", spotlightColor = "rgba(255, 2
             margin: 0;
             display: flex;
             align-items: center;
-            font-family: "Roboto", sans-serif;
+            font-family: "Anta", sans-serif;
             font-style: normal;
             font-weight: 500;
             font-size: clamp(1.3rem, 1.6vw, 2.5rem);
-            --mouse-x: -50%;
-            --mouse-y: -50%;
-            --spotlight-color: rgba(255, 255, 255, 0.05);
-            width: 20vw;
+            width: 15vw;
             height: 70vh;
-            position: "relative";
-        }
+            position: relative;
+            box-shadow: 0 0 0.8rem ${Colors.lilac}, 0 0 1.25rem ${Colors.blue};
 
+        }
 
         .card-spotlight::before 
         {
@@ -61,7 +59,7 @@ const SpotlightCard = ({ children, className = "", spotlightColor = "rgba(255, 2
 
         .card-spotlight:hover::before,
         .card-spotlight:focus-within::before {
-            opacity: 0.6;
+            opacity: 0.1;
         }
 
         @media (orientation:portrait)

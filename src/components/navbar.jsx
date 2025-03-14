@@ -10,6 +10,8 @@ export const Navbar = () => {
         <>
             <style>
                 {`  
+                    @import url('https://fonts.googleapis.com/css2?family=Anta&display=swap');
+
                     .active {
                         
                         text-decoration: bold;
@@ -30,11 +32,13 @@ export const Navbar = () => {
                     top: 0;
                     z-index: 10;
                     backdropFilter: "blur(10px)";
+                    font-family: "Anta", sans-serif;
                     }
 
                     nav div {
                         display: flex;
                         align-items: center;
+                        font-family: "Anta", sans-serif;
                     }
 
                     nav .menu {
@@ -61,6 +65,7 @@ export const Navbar = () => {
                         text-decoration: none;
                         color: ${Colors.white};
                         margin: 0.8rem 0.5rem;
+                        font-family: "Anta", sans-serif;
                     }
 
                     nav ul {
@@ -140,7 +145,7 @@ export const Navbar = () => {
             <nav>
                 <div>
                     <img src={logo} ></img>
-                    <Link to="/" className="title">Innovation Club</Link>
+                    <Link to="/" className="title">INNOVATION CLUB</Link>
                 </div>
                 <ul className={menuOpen ? "open": "close"}>
                     <li>

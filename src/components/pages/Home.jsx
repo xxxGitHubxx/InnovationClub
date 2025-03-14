@@ -58,11 +58,14 @@ export const Home = () => {
         <>
             <style>
                 {`  
-                    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+                    @import url('https://fonts.googleapis.com/css2?family=Anta&display=swap');
 
+                    /*Full Page*/
                     .Home {
                         zIndex: -1;
                     }
+
+                    /*Banner area*/
                     .Home .banner {
                         background: ${Colors.black} url(${banner}) no-repeat fixed center; 
                         background-size: cover;
@@ -74,20 +77,8 @@ export const Home = () => {
                         align-items: center;
                         position: relative;
                     }
-                    .content {
-                        background: rgb(28,28,28);
-                        background: linear-gradient(180deg, #1c1c1c 0%,rgb(5, 5, 88) 20%,rgb(65, 3, 88) 40%, #1c1c1c 60%, rgb(65, 3, 88) 80%, rgb(5, 5, 88) 100%);
-                        height:  800vh;
-                        z-index: -10;
-                        display: flex;
-                        justify-content: center;
-                        align-items: flex-start;
-                        padding: clamp(3rem, 10rem, 10rem) 5vw;
-                        gap: 2rem;
-                        flex-wrap: wrap;
-                        align-content: flex-start
-                    }
 
+                    /*Banner translucent box*/
                     .bannerContainer {
                         background: rgba(255, 255, 255, 0.3);
                         backdrop-filter: blur(8px);
@@ -109,13 +100,14 @@ export const Home = () => {
                         text-align: center;
                     }
 
+                    /*INNOVATION CLUB title text*/
                     .bannerText {
                         position: relative;
                         top: 20vh; /* Start hidden below */
-                        font-family: "Roboto", sans-serif;
+                        font-family: "Anta", sans-serif;
                         font-style: extra-bold;
                         font-weight: 900;
-                        font-size: clamp(2.5rem, 7vw, 4.2rem);
+                        font-size: clamp(3rem, 6.8vw, 4.3rem);
                         color: ${Colors.black};
                         opacity: 0;
                         transition: transform 1s ease-out, opacity 2s ease-out;
@@ -126,6 +118,7 @@ export const Home = () => {
                         opacity: 1;
                     }
 
+                    /*Text under title*/
                     .rotatingText {
                         position: absolute;
                         text-align: center;
@@ -137,7 +130,6 @@ export const Home = () => {
                         overflow: hidden;
                         border-radius: 30px;
                     }
-
                     .rotatingText-adjective { 
                         font-family: 'Courier New', monospace;
                         font-size: clamp(0.5rem, 5vw, 3.2rem);
@@ -152,49 +144,73 @@ export const Home = () => {
                         text-align: center;
                         text-transform: uppercase;
                         top: 10%;
-
                     }
 
-                    .jump {
-                        width: 2.5rem;
-                        border-radius: 50%;
-                        position: absolute;
-                        bottom: 10%;
-                        left: 50%;
-                        background-color: rgba(28, 28, 28, 0.8);
-                        transform: rotate(180deg) translate(50%, 50%);
-                        display: block;
-                        padding: 5px 5px;
-                        transition: all 0.1s;
-                        cursor: pointer;
-                    }
-                    .jump:hover {
-                        border-style: solid;
-                        border-color: ${Colors.black};
-                        width: 3rem;
-                    }
-
+                    /*Rotating text animation*/
                     @keyframes rotate {
                       0% {opacity: 0; transform: translate3d(0, 50px, 0);}
                       10%, 30% {opacity: 1; transform: translate3d(0, 0, 0);}
                       40% {opacity: 0; transform: translate3d(0, -25px, 0);}
                       100% {opacity: 0; transform: translate3d(0, -25px, 0);}
                     }
-
                     .rotatingText-adjective:nth-of-type(1) {
                       animation: rotate 4.5s infinite;
                     }
-
                     .rotatingText-adjective:nth-of-type(2) {
                       animation: rotate 4.5s infinite;
                       animation-delay: 1.5s; /* Starts after first finishes */
                     }
-
                     .rotatingText-adjective:nth-of-type(3) {
                       animation: rotate 4.5s infinite;
                       animation-delay: 3s; /* Starts after second finishes */
                     }
 
+
+                    /*Scroll button under banner box*/
+                    .jump {
+                        width: 2.5rem;
+                        border-radius: 50%;
+                        background-color: rgba(28, 28, 28, 0.8);
+                        transform: rotate(180deg) translate(50%, 50%);
+                        display: block;
+                        padding: 5px 5px;
+                        transition: all 0.1s;
+                        cursor: pointer;
+                        z-index: 1;
+                    }
+                    .jump:hover {
+                        border-style: solid;
+                        border-color: ${Colors.black};
+                        width: 3rem;
+                        transform: rotate(180deg) translate(50%, 40%);
+                    }
+
+                    
+                    /*Everything except banner*/
+                    .content {
+                        background: rgb(28,28,28);
+                        background: repeating-linear-gradient(180deg, #1c1c1c 0%,rgb(5, 5, 88) 12.5%,rgb(65, 3, 88) 25%, rgb(5, 5, 88) 37.5%, #1c1c1c 50%);
+                        height:  800vh;
+                        z-index: -10;
+                    }
+
+                    /*General styling for each section of the page*/
+                    .section {
+                    height: 80vh;
+                    display: flex;
+                    justify-content: center;
+                    align-items: flex-start;
+                    padding-top: clamp(3rem, 10rem, 10rem);
+                    padding-left: 5vw;
+                    padding-right: 5vw;
+                    gap: 2rem;
+                    flex-wrap: wrap;
+                    align-content: flex-start;            
+                    }
+
+                    /*
+
+                    /*General styling for different section titles which do not have img*/
                     .sectionTitle
                     {
                     position: relative;
@@ -204,10 +220,9 @@ export const Home = () => {
                     justify-content: center;
                     align-items: center;
                     flex-wrap: wrap;
-                    height: 50vh;
+                    height: 10vh;
                     margin-top: 6vh;
                     }
-
                     .sectionTitle .box
                     {
                     position: relative;
@@ -224,7 +239,7 @@ export const Home = () => {
                     content:'';
                     position: absolute;
                     top: 0;
-                    left: 0;
+                    left: 10%;
                     width: 60%;
                     height: 100%;
                     background: #fff;
@@ -234,12 +249,10 @@ export const Home = () => {
                     background: linear-gradient(315deg,${Colors.purple},${Colors.lilac});
                     z-index: 0;
                     }
-
                     .sectionTitle .box::after
                     {
                     filter: blur(30px);
                     }
-
                     .sectionTitle:hover .box::before,
                     .sectionTitle:hover .box::after
                     {
@@ -248,7 +261,6 @@ export const Home = () => {
                     left: 5%;
                     right: 0%;
                     }
-
                     .sectionTitle .box .text
                     {
                     position: absolute;
@@ -262,7 +274,7 @@ export const Home = () => {
                     transform: 0.5s;
                     color: ${Colors.white};
                     z-index: 1;
-                    font-family: "Roboto", sans-serif;
+                    font-family: "Anta", sans-serif;
                     font-style: extra-bold;
                     font-weight: 900;
                     font-size: clamp(2.5rem, 7vw, 4.2rem);
@@ -270,15 +282,16 @@ export const Home = () => {
                     justify-content: center;
                     }
 
+                    /*modification for phone*/
                     @media (orientation:portrait)
                     {
+                        /*General styling for section's title which do not have img*/
                         .sectionTitle
                         {
                             flex-basis: 100%;
                             width: 100%;
                             margin-top: -10rem;;
                         }
-                        
                         .sectionTitle .box::before,
                         .sectionTitle .box::after
                         {
@@ -287,8 +300,7 @@ export const Home = () => {
                         top: 35%;
                         width: 350%;
                         height: 30%;
-                        }
-
+                    }
                         .sectionTitle .box .text
                         {
                         position: relative;
@@ -302,24 +314,41 @@ export const Home = () => {
             <div className="Home">
                 <div className="banner">
                     <BannerContainer />
-                    <img src={favicon} className="jump" onClick={() => window.scrollTo({ top: window.innerHeight + (window.innerHeight * 0.10), behavior: "smooth" })}></img>
+                    <img src={favicon} className="jump" style={{position: "absolute", bottom: "10%", left: "50%"}} onClick={() => window.scrollTo({ top: (window.innerHeight * 1.10), behavior: "smooth" })}></img>
                 </div>
+
                 <div className="content">
-                <div class="sectionTitle">
-                    <div class="box">
-                        <div class="text">
-                        Our Aim
+
+                    <div className="section">
+                        <div class="sectionTitle">
+                            <div class="box">
+                                <div class="text">
+                                Our Aim
+                                </div>
+                            </div>
                         </div>
+                        <SpotlightCard className="spotlight">
+                        
+                                The Innovation Club, founded in 2024, aims to foster creativity and problem-solving by encouraging members 
+                                to think outside the box and develop cutting-edge solutions. It provides a collaborative space for individuals 
+                                to explore new ideas, experiment with emerging technologies, and drive positive change through innovation. 
+                                The club nurtures a spirit of curiosity and continuous learning, empowering members to turn their visions into reality.
+                        
+                        </SpotlightCard>
                     </div>
-                </div>
-                <SpotlightCard className="spotlight">
-                 
-                        The Innovation Club, founded in 2024, aims to foster creativity and problem-solving by encouraging members 
-                        to think outside the box and develop cutting-edge solutions. It provides a collaborative space for individuals 
-                        to explore new ideas, experiment with emerging technologies, and drive positive change through innovation. 
-                        The club nurtures a spirit of curiosity and continuous learning, empowering members to turn their visions into reality.
-                 
-                </SpotlightCard>
+                    
+                    <div className="section">
+                        <div class="sectionTitle">
+                            <div class="box">
+                                <div class="text">
+                                Our Aim
+                                </div>
+                            </div>
+                        </div>
+                        <SpotlightCard className="spotlight">
+                        </SpotlightCard>
+                    </div>
+
                 </div>
             </div>
         </>
