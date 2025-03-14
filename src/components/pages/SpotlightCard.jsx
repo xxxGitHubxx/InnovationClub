@@ -21,7 +21,7 @@ const SpotlightCard = ({ children, className = "", spotlightColor = Colors.white
         .card-spotlight
         {
             background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(6px);
+            backdrop-filter: blur(10px);
             border-radius: 30px;
             padding: 0% 5%;
             color: ${Colors.white};
@@ -66,8 +66,9 @@ const SpotlightCard = ({ children, className = "", spotlightColor = Colors.white
         {
             .card-spotlight
             {
-                flex-basis: 100%;
                 height: 60vh;
+                width: 90%;
+                order: 2;
             }
         }
 

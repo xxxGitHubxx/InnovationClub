@@ -1,6 +1,10 @@
 import { useEffect, useRef } from "react";
 
 import banner from "../../assets/banner.jpg";
+import pic1 from "../../assets/IdeaIncubation.png";
+import pic2 from "../../assets/Prototyping&Experimentation.png";
+import pic3 from "../../assets/Workshops&SkillBuilding.jpg";
+import pic4 from "../../assets/Competition&Showcase.png";
 import favicon from "../../assets/Innovation Club favicon.png";
 import { Colors } from "../../assets/Colors";
 import SpotlightCard from './SpotlightCard';
@@ -88,6 +92,7 @@ export const Home = () => {
                         position: absolute;
                         top: 45%;
                         left: 50%;
+                        right: 50%;
                         text-align: center;
                         transform: translate(-50%, -50%);
                         width: clamp(100px, 60vw, 600px);
@@ -107,7 +112,7 @@ export const Home = () => {
                         font-family: "Anta", sans-serif;
                         font-style: extra-bold;
                         font-weight: 900;
-                        font-size: clamp(3rem, 6.8vw, 4.3rem);
+                        font-size: clamp(2.4rem, 6.8vw, 4.3rem);
                         color: ${Colors.black};
                         opacity: 0;
                         transition: transform 1s ease-out, opacity 2s ease-out;
@@ -189,26 +194,45 @@ export const Home = () => {
                     /*Everything except banner*/
                     .content {
                         background: rgb(28,28,28);
-                        background: repeating-linear-gradient(180deg, #1c1c1c 0%,rgb(5, 5, 88) 12.5%,rgb(65, 3, 88) 25%, rgb(5, 5, 88) 37.5%, #1c1c1c 50%);
+                        background: repeating-linear-gradient(180deg, ${Colors.black} 0%,rgb(5, 5, 88) 12.5%,rgb(65, 3, 88) 25%, rgb(5, 5, 88) 37.5%, ${Colors.black} 50%);
                         height:  800vh;
                         z-index: -10;
                     }
 
                     /*General styling for each section of the page*/
                     .section {
-                    height: 80vh;
                     display: flex;
                     justify-content: center;
-                    align-items: flex-start;
+                    align-items: stretch;
                     padding-top: clamp(3rem, 10rem, 10rem);
                     padding-left: 5vw;
                     padding-right: 5vw;
-                    gap: 2rem;
-                    flex-wrap: wrap;
+                    gap: 4rem;
+                    row-gap: 40%;
                     align-content: flex-start;            
                     }
 
-                    /*
+                    /*general styling for titles which have images*/
+                    .imgSectionTitle
+                    {
+                    position: relative;
+                    transform: translate(0, 22.5%);
+                    width: 30vw;
+                    height: 50vh;
+                    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+                    border-radius: 20px;
+                    color: ${Colors.white};
+                    z-index: 1;
+                    font-family: "Anta", sans-serif;
+                    font-style: extra-bold;
+                    font-weight: 900;
+                    font-size: clamp(2.5rem, 3.6vw, 4.2rem);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-shadow: 0 .15ch 0.3rem #000;
+                    flex: 1;
+                    }
 
                     /*General styling for different section titles which do not have img*/
                     .sectionTitle
@@ -216,7 +240,7 @@ export const Home = () => {
                     position: relative;
                     display: flex;
                     flex: 1;
-                    width: 50%;
+                    width: 40%;
                     justify-content: center;
                     align-items: center;
                     flex-wrap: wrap;
@@ -271,7 +295,6 @@ export const Home = () => {
                     backdrop-filter: blur(10px);
                     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
                     border-radius: 8px;
-                    transform: 0.5s;
                     color: ${Colors.white};
                     z-index: 1;
                     font-family: "Anta", sans-serif;
@@ -285,26 +308,45 @@ export const Home = () => {
                     /*modification for phone*/
                     @media (orientation:portrait)
                     {
+                        /*Styling for each section*/
+                        .section{
+                        flex-direction: column;
+                        align-items: center;
+                        }
+
                         /*General styling for section's title which do not have img*/
                         .sectionTitle
                         {
                             flex-basis: 100%;
+                            order: -1;
                             width: 100%;
-                            margin-top: -10rem;;
+                            margin-top: -10rem;
+                            margin-bottom: -4rem;
                         }
                         .sectionTitle .box::before,
                         .sectionTitle .box::after
                         {
                         transform: skewX(0deg);
-                        left: -125%;
+                        left: -150%;
                         top: 35%;
-                        width: 350%;
+                        width: 400%;
                         height: 30%;
-                    }
+                        }
                         .sectionTitle .box .text
                         {
                         position: relative;
                         padding: 3rem 6rem;
+                        }
+
+                        .imgSectionTitle
+                        {
+                            order: 1;
+                            width: 80%;
+                            min-height: 30vh;
+                            transform: translate(0,0);
+                            margin-bottom: 2rem;
+                            margin-top: -4rem;
+
                         }
                     }
 
@@ -338,17 +380,40 @@ export const Home = () => {
                     </div>
                     
                     <div className="section">
-                        <div class="sectionTitle">
-                            <div class="box">
-                                <div class="text">
-                                Our Aim
-                                </div>
-                            </div>
-                        </div>
                         <SpotlightCard className="spotlight">
+                        The Innovation Club provides a nurturing environment where students can brainstorm and explore new ideas. Through guided sessions by
+                         experienced people and peer collaboration, members can develop their initial concepts into well-structured solutions. The club 
+                         encourages free thinking and out-of-the-box ideas, promoting creativity and originality.
+                        </SpotlightCard>
+                        <div class="imgSectionTitle" style={{background: `url(${pic1}) no-repeat center/cover`}}>Idea Incubation</div>
+                    </div>
+
+                    <div className="section">
+                    <div class="imgSectionTitle" style={{background: `url(${pic2}) no-repeat center/cover`}}>Prototyping & Experimentation</div>
+                        <SpotlightCard className="spotlight">
+                        Innovation Club members have access to resources and lab spaces where they can experiment with their ideas and create working prototypes. 
+                        Whether it's using 3D printers, electronics kits, or software platforms, the club encourages hands-on experimentation to test and improve 
+                        the feasibility of their concepts.
                         </SpotlightCard>
                     </div>
 
+                    <div className="section">
+                        <SpotlightCard className="spotlight">
+                        Regular hands-on workshops are a key feature of the Innovation Club. These sessions cover a wide range of topics, such as design thinking, coding,
+                         prototyping, and emerging technologies like artificial intelligence, robotics, and 3D printing. The goal is to equip members with the necessary skills
+                         to bring their ideas to life, fostering technical and creative expertise. Additionally, most of these workshops are conducted by students themselves.
+                        </SpotlightCard>
+                        <div class="imgSectionTitle" style={{background: `url(${pic3}) no-repeat center/cover`}}>Workshops & Skill-building</div>
+                    </div>
+
+                    <div className="section">
+                        <div class="imgSectionTitle" style={{background: `url(${pic4}) no-repeat center/cover`}}>Showcases & Competitions</div>
+                        <SpotlightCard className="spotlight">
+                        Members have opportunities to present their projects at various exhibitions and competitions. These showcases not only celebrate their achievements but
+                         also help them gain recognition for their innovative work. Once their talent has been nurtured, they are sent to represent the school in various inter
+                          school events such as hackathons.
+                        </SpotlightCard>
+                    </div>
                 </div>
             </div>
         </>
