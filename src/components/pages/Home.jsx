@@ -1,11 +1,8 @@
 import { useEffect, useRef } from "react";
 
-import banner from "../../assets/banner.jpg";
-import pic1 from "../../assets/IdeaIncubation.png";
-import pic2 from "../../assets/Prototyping&Experimentation.png";
-import pic3 from "../../assets/Workshops&SkillBuilding.jpg";
-import pic4 from "../../assets/Competition&Showcase.png";
-import favicon from "../../assets/Innovation Club favicon.png";
+import banner from "../../assets/HomePageSections/banner.jpg";
+import {pic1,pic2,pic3,pic4} from '../../assets/HomePageSections/DetailsImages'
+import favicon from "../../assets/Branding/Innovation Club favicon.png";
 import { Colors } from "../../assets/Colors";
 import SpotlightCard from './SpotlightCard';
 
@@ -68,6 +65,9 @@ export const Home = () => {
                     .Home {
                         zIndex: -1;
                     }
+
+
+
 
                     /*Banner area*/
                     .Home .banner {
@@ -190,120 +190,172 @@ export const Home = () => {
                         transform: rotate(180deg) translate(50%, 40%);
                     }
 
+
+
+
+
                     
                     /*Everything except banner*/
                     .content {
                         background: rgb(28,28,28);
                         background: repeating-linear-gradient(180deg, ${Colors.black} 0%,rgb(5, 5, 88) 12.5%,rgb(65, 3, 88) 25%, rgb(5, 5, 88) 37.5%, ${Colors.black} 50%);
-                        height:  800vh;
+                        height:  auto;
                         z-index: -10;
                     }
 
                     /*General styling for each section of the page*/
                     .section {
-                    display: flex;
-                    justify-content: center;
-                    align-items: stretch;
-                    padding-top: clamp(3rem, 10rem, 10rem);
-                    padding-left: 5vw;
-                    padding-right: 5vw;
-                    gap: 4rem;
-                    row-gap: 40%;
-                    align-content: flex-start;            
+                        display: flex;
+                        justify-content: center;
+                        align-items: stretch;
+                        padding-top: clamp(3rem, 10rem, 10rem);
+                        padding-left: 5vw;
+                        padding-right: 5vw;
+                        gap: 4rem;
+                        row-gap: 40%;
+                        align-content: flex-start;            
                     }
 
                     /*general styling for titles which have images*/
                     .imgSectionTitle
                     {
-                    position: relative;
-                    transform: translate(0, 22.5%);
-                    width: 30vw;
-                    height: 50vh;
-                    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-                    border-radius: 20px;
-                    color: ${Colors.white};
-                    z-index: 1;
-                    font-family: "Anta", sans-serif;
-                    font-style: extra-bold;
-                    font-weight: 900;
-                    font-size: clamp(2.5rem, 3.6vw, 4.2rem);
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    text-shadow: 0 .15ch 0.3rem #000;
-                    flex: 1;
+                        position: relative;
+                        transform: translate(0, 22.5%);
+                        width: 30vw;
+                        height: 50vh;
+                        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+                        border-radius: 20px;
+                        color: ${Colors.white};
+                        z-index: 1;
+                        font-family: "Anta", sans-serif;
+                        font-style: extra-bold;
+                        font-weight: 900;
+                        font-size: clamp(2.5rem, 3.6vw, 4.2rem);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        text-shadow: 0 .15ch 0.3rem #000;
+                        flex: 1;
                     }
 
                     /*General styling for different section titles which do not have img*/
                     .sectionTitle
                     {
-                    position: relative;
-                    display: flex;
-                    flex: 1;
-                    width: 40%;
-                    justify-content: center;
-                    align-items: center;
-                    flex-wrap: wrap;
-                    height: 10vh;
-                    margin-top: 6vh;
+                        position: relative;
+                        display: flex;
+                        flex: 1;
+                        width: 40%;
+                        justify-content: center;
+                        align-items: center;
+                        flex-wrap: wrap;
+                        height: 10vh;
+                        margin-top: 6vh;
                     }
+                        .sectionTitle.v2
+                        {
+                            flex-basis: 100%;
+                            order: -1;
+                            width: 100%;
+                            margin-top: -10rem;
+                            margin-bottom: -4rem;
+                        }
                     .sectionTitle .box
                     {
-                    position: relative;
-                    width: 20vw;
-                    height: 60vh;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    transition: 0.5s;
+                        position: relative;
+                        width: 65%;
+                        height: 60vh;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        transition: 0.5s;
                     }
                     .sectionTitle .box::before,
                     .sectionTitle .box::after
                     {
-                    content:'';
-                    position: absolute;
-                    top: 0;
-                    left: 10%;
-                    width: 60%;
-                    height: 100%;
-                    background: #fff;
-                    border-radius: 8px;
-                    transform: skewX(15deg);
-                    transition: 0.5s;
-                    background: linear-gradient(315deg,${Colors.purple},${Colors.lilac});
-                    z-index: 0;
+                        content:'';
+                        position: absolute;
+                        top: 0;
+                        left: 10%;
+                        width: 60%;
+                        height: 100%;
+                        background: #fff;
+                        border-radius: 8px;
+                        transform: skewX(15deg);
+                        transition: 0.5s;
+                        background: linear-gradient(315deg,${Colors.purple},${Colors.lilac});
+                        z-index: 0;
                     }
                     .sectionTitle .box::after
                     {
-                    filter: blur(30px);
+                        filter: blur(30px);
                     }
                     .sectionTitle:hover .box::before,
                     .sectionTitle:hover .box::after
                     {
-                    transform: skewX(0deg);
-                    width: 70%;
-                    left: 5%;
-                    right: 0%;
+                        transform: skewX(0deg);
+                        width: 70%;
+                        left: 5%;
+                        right: 0%;
                     }
+                        .sectionTitle.v2 .box::before,
+                        .sectionTitle.v2 .box::after
+                        {
+                            transform: skewX(0deg);
+                            left: -25%;
+                            top: 42.5%;
+                            width: 150%;
+                            height: 15%;
+                        }
                     .sectionTitle .box .text
                     {
-                    position: absolute;
-                    left: 0;
-                    padding: 6rem 2rem;
-                    width: 60%;
-                    background: rgba(255, 255, 255, 0.05);
-                    backdrop-filter: blur(10px);
-                    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-                    border-radius: 8px;
-                    color: ${Colors.white};
-                    z-index: 1;
-                    font-family: "Anta", sans-serif;
-                    font-style: extra-bold;
-                    font-weight: 900;
-                    font-size: clamp(2.5rem, 7vw, 4.2rem);
-                    display: flex;
-                    justify-content: center;
+                        position: absolute;
+                        left: 0;
+                        padding: 6rem 2rem;
+                        width: 60%;
+                        background: rgba(255, 255, 255, 0.05);
+                        backdrop-filter: blur(10px);
+                        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                        border-radius: 8px;
+                        color: ${Colors.white};
+                        z-index: 1;
+                        font-family: "Anta", sans-serif;
+                        font-style: extra-bold;
+                        font-weight: 900;
+                        font-size: clamp(2.5rem, 7vw, 4.2rem);
+                        display: flex;
+                        justify-content: center;
                     }
+                        .sectionTitle.v2 .box .text
+                        {
+                            position: relative;
+                            padding: 1rem 3rem;
+                            font-size: clamp(2.2rem, 6.4vw, 3.8rem);
+                            width: 200%;
+                        }
+
+                    .featuredContainer{
+                        width: 75vw;
+                        position: relative;
+                        left: 6.5%;
+                        height: 300vh;
+                        display: grid;
+                        gap: 2rem;
+                        grid-template-columns: 30% 30% 35%;
+                        grid-auto-rows: 18%;
+                        grid-template-areas:
+                        "box-1 box-1 box-2"
+                        "box-3 box-3 box-2"
+                        "box-4 box-5 box-5"
+                        "box-4 box-6 box-6";
+                    }
+                    .featuredItems{
+                        background-color: rgba(255, 255, 255, 0.2);
+                        border-radius: 30px;
+                        cursor: pointer;
+                    }
+
+
+
 
                     /*modification for phone*/
                     @media (orientation:portrait)
@@ -311,8 +363,7 @@ export const Home = () => {
                         /*Styling for each section*/
                         .section{
                         flex-direction: column;
-                        align-items: center;
-                        }
+                        align-items: center;                      }
 
                         /*General styling for section's title which do not have img*/
                         .sectionTitle
@@ -327,9 +378,9 @@ export const Home = () => {
                         .sectionTitle .box::after
                         {
                         transform: skewX(0deg);
-                        left: -150%;
+                        left: -25%;
                         top: 35%;
-                        width: 400%;
+                        width: 150%;
                         height: 30%;
                         }
                         .sectionTitle .box .text
@@ -346,10 +397,47 @@ export const Home = () => {
                             transform: translate(0,0);
                             margin-bottom: 2rem;
                             margin-top: -4rem;
-
                         }
+
+                        .featuredContainer
+                        {
+                            width: 95%;
+                            position: relative;
+                            left: -3%;
+                            height: 300vh;
+                            display: grid;
+                            gap: 2rem;
+                            grid-template-columns: 50% 50%;
+                            grid-auto-rows: 14% 14% 22% 14% 14%;
+                            grid-template-areas:
+                            "box-1 box-1"
+                            "box-3 box-3"
+                            "box-2 box-4"
+                            "box-5 box-5"
+                            "box-6 box-6";
+                        }      
                     }
 
+                    @media (max-aspect-ratio: 29/18) and (min-aspect-ratio: 1/1)
+                    {
+                        .featuredContainer
+                        {
+                            width: 95%;
+                            position: relative;
+                            left: 0%;
+                            height: 350vh;
+                            display: grid;
+                            gap: 2rem;
+                            grid-template-columns: 50% 50%;
+                            grid-auto-rows: 14% 14% 22% 14% 14%;
+                            grid-template-areas:
+                            "box-1 box-1"
+                            "box-3 box-3"
+                            "box-2 box-4"
+                            "box-5 box-5"
+                            "box-6 box-6";
+                        }     
+                    }
 
                 `}
             </style>
@@ -361,7 +449,7 @@ export const Home = () => {
 
                 <div className="content">
 
-                    <div className="section">
+                    <div className="section"  /*Aim */>
                         <div class="sectionTitle">
                             <div class="box">
                                 <div class="text">
@@ -379,41 +467,64 @@ export const Home = () => {
                         </SpotlightCard>
                     </div>
                     
-                    <div className="section">
-                        <SpotlightCard className="spotlight">
-                        The Innovation Club provides a nurturing environment where students can brainstorm and explore new ideas. Through guided sessions by
-                         experienced people and peer collaboration, members can develop their initial concepts into well-structured solutions. The club 
-                         encourages free thinking and out-of-the-box ideas, promoting creativity and originality.
-                        </SpotlightCard>
-                        <div class="imgSectionTitle" style={{background: `url(${pic1}) no-repeat center/cover`}}>Idea Incubation</div>
+                    <div /*details */>
+                        <div className="section">
+                            <SpotlightCard className="spotlight">
+                            The Innovation Club provides a nurturing environment where students can brainstorm and explore new ideas. Through guided sessions by
+                            experienced people and peer collaboration, members can develop their initial concepts into well-structured solutions. The club 
+                            encourages free thinking and out-of-the-box ideas, promoting creativity and originality.
+                            </SpotlightCard>
+                            <div class="imgSectionTitle" style={{background: `url(${pic1}) no-repeat center/cover`}}>Idea Incubation</div>
+                        </div>
+
+                        <div className="section">
+                        <div class="imgSectionTitle" style={{background: `url(${pic2}) no-repeat center/cover`}}>Prototyping & Experimentation</div>
+                            <SpotlightCard className="spotlight">
+                            Innovation Club members have access to resources and lab spaces where they can experiment with their ideas and create working prototypes. 
+                            Whether it's using 3D printers, electronics kits, or software platforms, the club encourages hands-on experimentation to test and improve 
+                            the feasibility of their concepts.
+                            </SpotlightCard>
+                        </div>
+
+                        <div className="section">
+                            <SpotlightCard className="spotlight">
+                            Regular hands-on workshops are a key feature of the Innovation Club. These sessions cover a wide range of topics, such as design thinking, coding,
+                            prototyping, and emerging technologies like artificial intelligence, robotics, and 3D printing. The goal is to equip members with the necessary skills
+                            to bring their ideas to life, fostering technical and creative expertise. Additionally, most of these workshops are conducted by students themselves.
+                            </SpotlightCard>
+                            <div class="imgSectionTitle" style={{background: `url(${pic3}) no-repeat center/cover`}}>Workshops & Skill-building</div>
+                        </div>
+
+                        <div className="section">
+                            <div class="imgSectionTitle" style={{background: `url(${pic4}) no-repeat center/cover`}}>Showcases & Competitions</div>
+                            <SpotlightCard className="spotlight">
+                            Members have opportunities to present their projects at various exhibitions and competitions. These showcases not only celebrate their achievements but
+                            also help them gain recognition for their innovative work. Once their talent has been nurtured, they are sent to represent the school in various inter
+                            school events such as hackathons.
+                            </SpotlightCard>
+                        </div>
                     </div>
 
-                    <div className="section">
-                    <div class="imgSectionTitle" style={{background: `url(${pic2}) no-repeat center/cover`}}>Prototyping & Experimentation</div>
-                        <SpotlightCard className="spotlight">
-                        Innovation Club members have access to resources and lab spaces where they can experiment with their ideas and create working prototypes. 
-                        Whether it's using 3D printers, electronics kits, or software platforms, the club encourages hands-on experimentation to test and improve 
-                        the feasibility of their concepts.
-                        </SpotlightCard>
+                    <div className="section" style={{flexDirection: "column"}}>
+                        <div class="sectionTitle v2">
+                            <div class="box">
+                                <div class="text">
+                                Featured Projects
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="featuredContainer">
+                            <div className="featuredItems" style={{gridArea: "box-1"}}></div>
+                            <div className="featuredItems" style={{gridArea: "box-2"}}></div>
+                            <div className="featuredItems" style={{gridArea: "box-3"}}></div>
+                            <div className="featuredItems" style={{gridArea: "box-4"}}></div>
+                            <div className="featuredItems" style={{gridArea: "box-5"}}></div>
+                            <div className="featuredItems" style={{gridArea: "box-6"}}></div>
+                        </div>
+
                     </div>
 
-                    <div className="section">
-                        <SpotlightCard className="spotlight">
-                        Regular hands-on workshops are a key feature of the Innovation Club. These sessions cover a wide range of topics, such as design thinking, coding,
-                         prototyping, and emerging technologies like artificial intelligence, robotics, and 3D printing. The goal is to equip members with the necessary skills
-                         to bring their ideas to life, fostering technical and creative expertise. Additionally, most of these workshops are conducted by students themselves.
-                        </SpotlightCard>
-                        <div class="imgSectionTitle" style={{background: `url(${pic3}) no-repeat center/cover`}}>Workshops & Skill-building</div>
-                    </div>
-
-                    <div className="section">
-                        <div class="imgSectionTitle" style={{background: `url(${pic4}) no-repeat center/cover`}}>Showcases & Competitions</div>
-                        <SpotlightCard className="spotlight">
-                        Members have opportunities to present their projects at various exhibitions and competitions. These showcases not only celebrate their achievements but
-                         also help them gain recognition for their innovative work. Once their talent has been nurtured, they are sent to represent the school in various inter
-                          school events such as hackathons.
-                        </SpotlightCard>
-                    </div>
                 </div>
             </div>
         </>

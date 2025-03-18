@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link, NavLink } from "react-router-dom"
-import logo from '../assets/Innovation Club icon.png'
+import logo from '../assets/Branding/Innovation Club icon.png'
 import { Colors } from '../assets/Colors';
 
 export const Navbar = () => { 
@@ -13,11 +13,7 @@ export const Navbar = () => {
                     @import url('https://fonts.googleapis.com/css2?family=Anta&display=swap');
 
                     .active {
-                        
-                        text-decoration: bold;
-                        border-style: solid;
-                        border-color: ${Colors.lilac};
-
+                        color: ${Colors.pink};
                     }
 
                     nav {
@@ -42,7 +38,15 @@ export const Navbar = () => {
                     }
 
                     nav .menu {
-                        display: none;
+                            display: flex;
+                            position: absolute;
+                            top: 1rem;
+                            right: 0.5rem;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            width: 2rem;
+                            height: 1.5rem;
+                            margin: 0.1rem 0;
                     }
 
                     nav .menu span {
@@ -56,7 +60,6 @@ export const Navbar = () => {
                         width: 2.5rem;
                         margin: 0.1rem 0.4rem;
                         padding-left: 1rem;
-
                     }
 
                     nav .title {
@@ -69,11 +72,28 @@ export const Navbar = () => {
                     }
 
                     nav ul {
+                            position: fixed;
+                            background-color: rgba(28,28,28,0.9);
+                            backdrop-filter: blur(5px);
+                            right: 0;
+                            top: 2.3rem;
+                            display: none;
+                            flex-direction: column;
+                            width: 20vw;
+                            height: 92.5vh;
+                            margin-bottom: 0.25rem;
+                            padding-left: 0;
+                            border-radius: 0.5rem;
+                        }
+
+                    nav ul.open {
                         display: flex;
                     }
 
                     nav ul li {
                         list-style: none;
+                        margin: 1.5rem;
+                        tact-align: center;
                     }
 
                     nav ul li a {
@@ -88,63 +108,22 @@ export const Navbar = () => {
                         border-radius: 0.5rem;
                     }
 
-                    nav ul li a:hover {
-                        border-style:solid;
-                        border-color: ${Colors.blue};
-                    }
-
                     @media (orientation:portrait) {
-                        nav .menu {
-                            display: flex;
-                            position: absolute;
-                            top: 1rem;
-                            right: 0.5rem;
-                            flex-direction: column;
-                            justify-content: space-between;
-                            width: 2rem;
-                            height: 1.5rem;
-                            margin: 0.1rem 0;
-                        }
-                        nav {
-                            flex-direction: column;
-                            align-items: start;
-                        }
                         nav ul {
-                            display: none;
-                            flex-direction: column;
-                            width: 100%;
-                            margin-bottom: 0.25rem;
-                            margin-left: 0;
-                            padding-left: 0
-                        }
-
-                        nav ul.open {
-                            display: flex;
-                        }
-
-                        nav ul li {
-                            margin: 1.5rem;
-                            tact-align: center;
-                        }
-                        nav ul li a{
-                            border-color: rgba(28, 28, 28, 0);
-                        }
-                        .active {
-                        color: ${Colors.pink};
-                        text-decoration: bold;
-                        border-style: none;
-                        }
-                        nav ul li a:hover {
-                        border-style: none;
-                        }
-
+                                position: absolute;                                display: none;
+                                flex-direction: column;
+                                width: 100%;
+                                margin-bottom: 0.25rem;
+                                margin-left: 0;
+                                padding-left: 0;
+                            }
                     }
 
                 `}
             </style>
             <nav>
                 <div>
-                    <img src={logo} ></img>
+                    <img src={logo}></img>
                     <Link to="/" className="title">INNOVATION CLUB</Link>
                 </div>
                 <ul className={menuOpen ? "open": "close"}>
