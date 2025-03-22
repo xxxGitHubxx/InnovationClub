@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import './App.css';
+import { Colors } from './assets/Colors';
 import { Auth } from './components/auth';
 import { Navbar } from './components/navbar';
 import { Home } from './components/pages/Home';
@@ -13,15 +14,7 @@ import { Login } from './components/pages/Login';
 
 function App() {
     return (
-        <>
-            <style>
-             {`  
-             .spacer {
-                 height: 3rem;
-                    }
-                    
-                `}
-            </style>
+        <body>
         <div className="App">
             <Routes>
                 <Route path="/" element={<Home />} />
@@ -31,7 +24,7 @@ function App() {
                 <Auth />
                 <Navbar />
         </div>
-        </>
+        </body>
   );
 }
 

@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 
 import banner from "../../assets/HomePageSections/banner.jpg";
 import {pic1,pic2,pic3,pic4} from '../../assets/HomePageSections/DetailsImages'
+import { box1,box2,box3,box4,box5,box6 } from "../../assets/HomePageSections/FeaturedImages";
 import favicon from "../../assets/Branding/Innovation Club favicon.png";
 import { Colors } from "../../assets/Colors";
 import SpotlightCard from './SpotlightCard';
@@ -349,9 +350,22 @@ export const Home = () => {
                         "box-4 box-6 box-6";
                     }
                     .featuredItems{
-                        background-color: rgba(255, 255, 255, 0.2);
+                        background-color: rgba(255, 255, 255, 0.1);
                         border-radius: 30px;
                         cursor: pointer;
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    .featuredItems::after 
+                    {
+                        content: "";
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 50%; 
+                        background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
                     }
 
 
@@ -515,12 +529,12 @@ export const Home = () => {
                         </div>
 
                         <div className="featuredContainer">
-                            <div className="featuredItems" style={{gridArea: "box-1"}}></div>
-                            <div className="featuredItems" style={{gridArea: "box-2"}}></div>
-                            <div className="featuredItems" style={{gridArea: "box-3"}}></div>
-                            <div className="featuredItems" style={{gridArea: "box-4"}}></div>
-                            <div className="featuredItems" style={{gridArea: "box-5"}}></div>
-                            <div className="featuredItems" style={{gridArea: "box-6"}}></div>
+                            <img src={box1} className="featuredItems" style={{ gridArea: "box-1"}} alt="Box 1" />
+                            <img src={box2} className="featuredItems" style={{ gridArea: "box-2"}} alt="Box 2" />
+                            <video src={box3} className="featuredItems" style={{ gridArea: "box-3", objectFit: "cover"}} autoPlay loop muted playsInline />
+                            <img src={box4} className="featuredItems" style={{ gridArea: "box-4"}} alt="Box 4" />
+                            <video src={box5} className="featuredItems" style={{ gridArea: "box-5"}} autoPlay loop muted playsInline />
+                            <video src={box6} className="featuredItems" style={{ gridArea: "box-6", objectFit: "cover"}} autoPlay loop muted playsInline />
                         </div>
 
                     </div>
