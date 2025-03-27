@@ -14,7 +14,7 @@ import { Login } from './components/pages/Login';
 
 function App() {
     return (
-        <body>
+        <>
         <div className="App">
             <Routes>
                 <Route path="/" element={<Home />} />
@@ -24,7 +24,7 @@ function App() {
                 <Auth />
                 <Navbar />
         </div>
-        </body>
+        </>
   );
 }
 
