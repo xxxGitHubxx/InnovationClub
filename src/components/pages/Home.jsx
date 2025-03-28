@@ -357,15 +357,26 @@ export const Home = () => {
                         height: 100%;
                     }
 
-                    .featuredItems::after 
-                    {
-                        content: "";
-                        position: absolute;
-                        bottom: 0;
-                        left: 0;
+                    .featuredText{
                         width: 100%;
-                        height: 50%; 
-                        background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+                        height: 100%;
+                        position: absolute;
+                        border-radius: 30px;
+                        cursor: pointer;
+                        background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 70%);
+                        color: ${Colors.white};
+                        display: flex;
+                        text-align: left;
+                        align-items: flex-end;
+                        justify-content: flex-start; 
+                        box-sizing: border-box;
+                        padding-left: 5%;
+                        padding-bottom: 3%;
+
+                        font-family: "Anta", sans-serif;
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: clamp(1rem, 1.6vw, 2.5rem);
                     }
 
 
@@ -415,14 +426,14 @@ export const Home = () => {
 
                         .featuredContainer
                         {
-                            width: 95%;
+                            width: 90%;
                             position: relative;
-                            left: -3%;
-                            height: 300vh;
+                            left: -5%;
+                            height: 200vh;
                             display: grid;
                             gap: 2rem;
                             grid-template-columns: 50% 50%;
-                            grid-auto-rows: 14% 14% 22% 14% 14%;
+                            grid-auto-rows: 14% 14% 21% 14% 14%;
                             grid-template-areas:
                             "box-1 box-1"
                             "box-3 box-3"
@@ -439,7 +450,7 @@ export const Home = () => {
                             width: 95%;
                             position: relative;
                             left: 0%;
-                            height: 350vh;
+                            height: 450vh;
                             display: grid;
                             gap: 2rem;
                             grid-template-columns: 50% 50%;
@@ -529,12 +540,24 @@ export const Home = () => {
                         </div>
 
                         <div className="featuredContainer">
-                            <img src={box1} className="featuredItems" style={{ gridArea: "box-1"}} alt="Box 1" />
-                            <img src={box2} className="featuredItems" style={{ gridArea: "box-2"}} alt="Box 2" />
-                            <video src={box3} className="featuredItems" style={{ gridArea: "box-3", objectFit: "cover"}} autoPlay loop muted playsInline />
-                            <img src={box4} className="featuredItems" style={{ gridArea: "box-4"}} alt="Box 4" />
-                            <video src={box5} className="featuredItems" style={{ gridArea: "box-5"}} autoPlay loop muted playsInline />
-                            <video src={box6} className="featuredItems" style={{ gridArea: "box-6", objectFit: "cover"}} autoPlay loop muted playsInline />
+
+                            <img src={box1} className="featuredItems" style={{ gridArea: "box-1"}} alt="Box 1"></img>
+                            <div className="featuredText" style={{ gridArea: "box-1"}}>Xyflow: Your Plants' Lifeline</div>
+
+                            <img src={box2} className="featuredItems" style={{ gridArea: "box-2"}} alt="Box 2"></img>
+                            <div className="featuredText" style={{ gridArea: "box-2"}}>Medicoach: Your Health <br></br>Forecast</div>
+
+                            <video src={box3} className="featuredItems" style={{ gridArea: "box-3", objectFit: "cover"}} autoPlay loop muted playsInline></video>
+                            <div className="featuredText" style={{ gridArea: "box-3"}}>Insurakshak: A Diebetic's ticket to Freedom</div>
+
+                            <img src={box4} className="featuredItems" style={{ gridArea: "box-4"}} alt="Box 4"></img>
+                            <div className="featuredText" style={{ gridArea: "box-4"}}>YogAi: Perfect Posture, Perfect Portability</div>
+
+                            <video src={box5} className="featuredItems" style={{ gridArea: "box-5"}} autoPlay loop muted playsInline></video>
+                            <div className="featuredText" style={{ gridArea: "box-5"}}>Interschool Robotics Championship</div>
+
+                            <video src={box6} className="featuredItems" style={{ gridArea: "box-6", objectFit: "cover"}} autoPlay loop muted playsInline></video>
+                            <div className="featuredText" style={{ gridArea: "box-6"}}>All Terrain Pathfinder</div>
                         </div>
 
                     </div>
