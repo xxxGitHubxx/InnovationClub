@@ -15,7 +15,7 @@ import { Login } from './components/pages/Login';
 function App() {
     return (
         <>
-        <div className="App">
+        <div className="App" style={{ "--lilac": Colors.lilac, "--blue": Colors.blue }}>
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />

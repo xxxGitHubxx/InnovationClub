@@ -338,11 +338,11 @@ export const Home = () => {
                         width: 75vw;
                         position: relative;
                         left: 6.5%;
-                        height: 300vh;
+                        height: 225vh;
                         display: grid;
                         gap: 2rem;
                         grid-template-columns: 30% 30% 35%;
-                        grid-auto-rows: 18%;
+                        grid-auto-rows: 24%;
                         grid-template-areas:
                         "box-1 box-1 box-2"
                         "box-3 box-3 box-2"
@@ -429,11 +429,11 @@ export const Home = () => {
                             width: 90%;
                             position: relative;
                             left: -5%;
-                            height: 200vh;
+                            height: 170vh;
                             display: grid;
                             gap: 2rem;
                             grid-template-columns: 50% 50%;
-                            grid-auto-rows: 14% 14% 21% 14% 14%;
+                            grid-auto-rows: 16.5% 16.5% 24.7% 16.5% 16.5%;
                             grid-template-areas:
                             "box-1 box-1"
                             "box-3 box-3"
@@ -560,6 +560,25 @@ export const Home = () => {
                             <div className="featuredText" style={{ gridArea: "box-6"}}>All Terrain Pathfinder</div>
                         </div>
 
+                    </div>
+                    
+                    <div className="section" style={{flexDirection: "column"}}>
+                        <div class="sectionTitle v2">
+                            <div class="box">
+                                <div class="text">
+                                Interested to join us?
+                                </div>
+                            </div>
+                        </div>
+                        <SpotlightCard className="full-width">
+                        <p>
+                        Contact our Presidents (Reyansh Kumar of 12-F & Soham Sahu of 12-F) to send an application to join the club!
+                        It must include your name, the feilds you would like to work in and a couple of projects made by you (which may include any venture).
+                         Their mail IDs respectively are - 
+                        <a href="mailto:reyansh_kumar@dpsn.org.in"> reyansh_kumar@dpsn.org.in </a>  &   
+                        <a href="mailto:sohamkumar_sahu@dpsn.org.in"> sohamkumar_sahu@dpsn.org.in</a>.
+                        </p>
+                        </SpotlightCard>
                     </div>
 
                 </div>

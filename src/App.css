@@ -3,4 +3,16 @@
   text-align: center;
 }
 
+a {
+  text-decoration: none; /* Remove underline */
+  color: var(--lilac); /* Default color */
+  transition: color 0.3s ease-in-out; /* Smooth color transition */
+}
+
+
+a:hover {
+  color: var(--blue); /* Darker color on hover */
+  text-decoration: underline; /* Underline on hover */
+}
+
 
