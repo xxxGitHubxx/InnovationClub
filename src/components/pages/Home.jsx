@@ -592,7 +592,7 @@ export const Home = () => {
                         </div>
                         <AccordionItem
                         title="Hover over me!"
-                        content="You’ll see the spotlight glow effect just like the SpotlightCard."
+                        content="Yoapuzamya SpotlightCard."
                     />
                     </div>
 
