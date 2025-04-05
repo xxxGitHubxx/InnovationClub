@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { Colors } from "../../assets/Colors";
+import { Colors } from "../assets/Colors";
 
 const SpotlightCard = ({ children, className = "", spotlightColor = Colors.white }) => {
     const divRef = useRef(null);
@@ -34,7 +34,7 @@ const SpotlightCard = ({ children, className = "", spotlightColor = Colors.white
                     font-family: "Anta", sans-serif;
                     font-style: normal;
                     font-weight: 500;
-                    font-size: clamp(1.3rem, 1.6vw, 2.5rem);
+                    font-size: clamp(1.2rem, 1.6vw, 2.5rem);
                     width: 15vw;
                     height: 70vh;
                     position: relative;
@@ -73,7 +73,6 @@ const SpotlightCard = ({ children, className = "", spotlightColor = Colors.white
                         max-width: 90%;
                         padding-right: 2%;
                         order: 2;
-                        font-size: clamp(1.2rem, 1.6vw, 2.5rem);
                         text-align: center;
                     }
                 }

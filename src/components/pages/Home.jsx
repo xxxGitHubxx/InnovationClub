@@ -5,7 +5,8 @@ import {pic1,pic2,pic3,pic4} from '../../assets/HomePageSections/DetailsImages'
 import { box1,box2,box3,box4,box5,box6 } from "../../assets/HomePageSections/FeaturedImages";
 import favicon from "../../assets/Branding/Innovation Club favicon.png";
 import { Colors } from "../../assets/Colors";
-import SpotlightCard from './SpotlightCard';
+import SpotlightCard from '../SpotlightCard';
+import AccordionItem from '../AccordionItem';
 
 const BannerContainer = () => {
     const bannerContainerRef = useRef(null);
@@ -450,11 +451,11 @@ export const Home = () => {
                             width: 95%;
                             position: relative;
                             left: 0%;
-                            height: 450vh;
+                            height: 280vh;
                             display: grid;
                             gap: 2rem;
                             grid-template-columns: 50% 50%;
-                            grid-auto-rows: 14% 14% 22% 14% 14%;
+                            grid-auto-rows: 17% 17% 26.7% 17% 17%;
                             grid-template-areas:
                             "box-1 box-1"
                             "box-3 box-3"
@@ -580,6 +581,22 @@ export const Home = () => {
                         </p>
                         </SpotlightCard>
                     </div>
+
+                    <div className="section" style={{flexDirection: "column"}}>
+                        <div class="sectionTitle v2">
+                            <div class="box">
+                                <div class="text">
+                                Doubts? Let's clear them!
+                                </div>
+                            </div>
+                        </div>
+                        <AccordionItem
+                        title="Hover over me!"
+                        content="You’ll see the spotlight glow effect just like the SpotlightCard."
+                    />
+                    </div>
+
+                    
 
                 </div>
             </div>
