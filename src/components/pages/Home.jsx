@@ -593,8 +593,8 @@ export const Home = () => {
                             </div>
                         </div>
                         <AccordionItem
-                        title="Hover over me!"
-                        content="Yoapuzamya SpotlightCard."
+                        title="What does Innovation Club do?"
+                        content="The school's high school tech department. It is student lead and is responsible for both organising and selecting all students for tech events from intra school to inter national. It combines all aspects of tech from coding to entrepreneurship and helps you climb the ladder to successful high school resume."
                     />
                     </div>
 
