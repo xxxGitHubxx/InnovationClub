@@ -75,7 +75,7 @@ export const Home = () => {
                     .Home .banner {
                         background: ${Colors.black} url(${banner}) no-repeat fixed center; 
                         background-size: cover;
-                        height: 105vh;
+                        height: 105svh;
                         zIndex: 1;
                         display: flex;
                         flex-direction: column;
@@ -202,8 +202,10 @@ export const Home = () => {
                         background: rgb(28,28,28);
                         background: repeating-linear-gradient(180deg, ${Colors.black} 0%,rgb(5, 5, 88) 12.5%,rgb(65, 3, 88) 25%, rgb(5, 5, 88) 37.5%, ${Colors.black} 50%);
                         height:  auto;
+                        padding-bottom: 5rem;
                         z-index: -10;
                     }
+                    
 
                     /*General styling for each section of the page*/
                     .section {
@@ -573,11 +575,11 @@ export const Home = () => {
                         </div>
                         <SpotlightCard className="full-width">
                         <p>
-                        Contact our Presidents (Reyansh Kumar of 12-F & Soham Sahu of 12-F) to send an application to join the club!
+                        Contact our Presidents (Aviral Kochgaway of 12-B & Riddhiman Ghosh of 12-D) to send an application to join the club!
                         It must include your name, the feilds you would like to work in and a couple of projects made by you (which may include any venture).
                          Their mail IDs respectively are - 
-                        <a href="mailto:reyansh_kumar@dpsn.org.in"> reyansh_kumar@dpsn.org.in </a>  &   
-                        <a href="mailto:sohamkumar_sahu@dpsn.org.in"> sohamkumar_sahu@dpsn.org.in</a>.
+                        <a href="mailto:aviral_kochgaway@dpsn.org.in"> aviral_kochgaway@dpsn.org.in </a>  &   
+                        <a href="mailto:riddhiman_ghosh@dpsn.org.in"> riddhiman_ghosh@dpsn.org.in</a>.
                         </p>
                         </SpotlightCard>
                     </div>

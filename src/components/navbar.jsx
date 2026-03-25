@@ -47,6 +47,7 @@ export const Navbar = () => {
                             width: 2rem;
                             height: 1.5rem;
                             margin: 0.1rem 0;
+                            cursor: pointer;
                     }
 
                     nav .menu span {
@@ -73,44 +74,50 @@ export const Navbar = () => {
 
                     nav ul {
                             position: fixed;
-                            background-color: rgba(28,28,28,0.9);
+                            background-color: rgba(28,28,28,0.8);
                             backdrop-filter: blur(5px);
-                            right: 0;
+                            display: flex;
+                            right: 0rem;
                             top: 2.3rem;
-                            display: none;
                             flex-direction: column;
-                            width: 20vw;
-                            height: 92.5vh;
                             margin-bottom: 0.25rem;
                             padding-left: 0;
                             border-radius: 0.5rem;
+                            transition: transform 0.3s ease-in-out;
+                            backdrop-filter: blur(5px);
                         }
 
-                    nav ul.open {
-                        display: flex;
+                    nav ul.close {
+                        transform: translateX(100%);
                     }
 
                     nav ul li {
                         list-style: none;
                         margin: 1.5rem;
-                        tact-align: center;
+                        text-align: center;
                     }
 
                     nav ul li a {
                         display: block;
                         border-style: solid;
-                        border-color:  rgba(28, 28, 28, 0);
+                        border-color:  rgba(255, 255, 255, 0);
                         border-width: 2px;
                         text-decoration: none;
                         color: ${Colors.white};
                         margin: 0rem 0.5rem;
-                        padding: 0.1rem 0.4rem;
+                        padding: 0.5rem 4rem;
                         border-radius: 0.5rem;
+                        transition: border-color 0.3s ease-in-out;
+                    }
+
+                    nav ul li a:hover {
+                        border-color: rgba(255, 255, 255, 0.48);
                     }
 
                     @media (orientation:portrait) {
                         nav ul {
-                                position: absolute;                                display: none;
+                                position: absolute;                                
+                                display: flex;
                                 flex-direction: column;
                                 width: 100%;
                                 margin-bottom: 0.25rem;
@@ -128,14 +135,14 @@ export const Navbar = () => {
                 </div>
                 <ul className={menuOpen ? "open": "close"}>
                     <li>
-                        <NavLink to="/" onClick={() => { setMenuOpen(!menuOpen)}} >Home</NavLink>
+                        <NavLink to="/" onClick={() => { setMenuOpen(!menuOpen)}} >HOME</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/about" onClick={() => { setMenuOpen(!menuOpen) }} >About</NavLink>
+                        <NavLink to="/about" onClick={() => { setMenuOpen(!menuOpen) }} >ABOUT</NavLink>
                     </li>
-                    <li>
+                    {/* <li>
                         <NavLink to="/login" onClick={() => { setMenuOpen(!menuOpen) }} >Log In</NavLink>
-                    </li>
+                    </li> */}
                 </ul>
                 <div className="menu" onClick={() => { setMenuOpen(!menuOpen) }} >
                     <span></span>
